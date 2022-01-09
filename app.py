@@ -23,7 +23,7 @@ def get_capital(name):
         result["country_name"] = res_json[0]["name"]["common"]
         result["capital"] = res_json[0]["capital"]
         result["flag"] = res_json[0]["flags"]["png"]
-        result["lang"] = res_json[0]["languages"]
+        result["lang"] = list(res_json[0]["languages"].values())[0]
 
         return f'{result}'
     elif response.status_code == 400:
